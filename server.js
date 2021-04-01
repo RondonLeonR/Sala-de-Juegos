@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const path = require('path');
-app.use(express.static(__dirname + '/SaladeJuegos2'));
+app.use(express.static(__dirname + '/saladejuegos2'));
 
 app.listen(process.env.PORT || 8080);
 

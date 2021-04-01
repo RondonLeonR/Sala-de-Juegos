@@ -9,7 +9,7 @@ import { LoginComponent } from './componentes/login/login.component';
 import { HomeComponent } from './componentes/home/home.component';
 import { QuienSoyComponent } from './componentes/quien-soy/quien-soy.component';
 
-import { AngularFireModule } from '@angular/fire';
+import { AngularFireModule } from '@angular/fire/';
 
 import { environment } from 'src/environments/environment';
 import { RegisterComponent } from './componentes/register/register.component';
@@ -26,7 +26,7 @@ import { RegisterComponent } from './componentes/register/register.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig)
+    AngularFireModule.initializeApp(environment.firebase)
   ],
   providers: [],
   bootstrap: [AppComponent]
