@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "postinstall": "ng build --output-path salade-juegos2 --aot --prod"
+    "postinstall": "ng build --output-path SaladeJuegos2 --aot --prod"
   },
   "private": true,
   "dependencies": {
@@ -52,6 +52,6 @@
   },
   "engines": {
     "node": "v14.16.0",
-    "npm": "6.14.11"
+    "npm": "v6.14.11"
   }
 }
