@@ -1,0 +1,92 @@
+@import url(https://fonts.googleapis.com/css?family=Exo:100,200,400);
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:700,400,300);
+
+
+body{
+
+    background: url('../../../assets/imagen/mario.gif');
+
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment:fixed;
+    background-size:cover;
+    background-color: #fff;
+
+
+}
+
+
+#container{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 500px;
+    height: 300px;
+    border-radius: 5px;
+    background: rgba(3, 3, 3, 0.707);
+    box-shadow: 1px 1px 50px #000;
+
+}   
+
+h1{
+    font-family: 'Open Sans Condensed', sans-serif;
+    position: relative;
+    text-align: center;
+    font-size: 50px;
+    color: rgb(255, 255, 255);
+}
+
+
+.btnRegister,.btnCancel,
+input{
+    font-family: 'Open Sans Condensed', sans-serif;
+    text-decoration: none;
+
+    position: relative;
+    width: 80%;
+    display: block;
+    margin: 9px auto;
+    font-size: 17px;
+    color: #fff;
+    padding: 8px;
+    border-radius: 6px;
+    border: none;
+
+    background: rgba(3,3,3,.1);
+    
+}
+
+
+.btnRegister{
+    
+    font-family: 'Open Sans Condensed' sans-serif;
+    text-align: center;
+    padding: 6px 8px;
+    font-size: 20px;
+
+    background-color: rgba(255, 255, 255, 0.535);
+    transition: background-color .5s, font-size 1s;
+}
+  
+.btnRegister:hover {
+    background-color: rgba(34, 0, 255, 0.741);
+    font-size: 25px;
+}
+
+.btnCancel{
+    padding: 6px 8px;
+    width: 20%;
+
+    display: block;
+    text-align: center;
+    
+    background-color: rgba(151, 2, 2, 0.323);
+    transition: background-color 0.5s;
+}
+
+.btnCancel:hover {
+    background-color: rgba(255, 0, 0, 0.802);
+}

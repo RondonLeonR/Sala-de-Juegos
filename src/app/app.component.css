@@ -1,0 +1,28 @@
+html,
+    body {
+        height: 300px;
+    }
+      
+    .bottom-left {
+        padding-bottom: 6%;
+        bottom: 0;
+        left: 0;
+    }
+      
+    .bottom-center {
+        padding-bottom: 6%;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+      
+    .bottom-right {
+        padding-bottom: 6%;
+        bottom: 0;
+        right: 0;
+    }
+
+    .footer { 
+        position: absolute;   bottom: 0;   width: 100%;   /* Set the fixed height of the footer here */  
+        height: 70px;   
+    }

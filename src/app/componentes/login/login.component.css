@@ -1,0 +1,116 @@
+@import url(https://fonts.googleapis.com/css?family=Exo:100,200,400);
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:700,400,300);
+
+
+body{
+
+    background: url('../../../assets/imagen/mario.gif');
+    background-position: center center;
+    background-repeat: no-repeat;
+    /* La imagen se fija en la ventana de visualización para 
+    que la altura de la imagen no supere a la del contenido */
+    background-attachment:fixed;
+
+    /* La imagen de fondo se reescala automáticamente con el
+    cambio del ancho de ventana del navegador */
+    background-size:cover;
+
+    /* Se muestra un color de fondo mientras se está cargando la imagen
+    de fondo o si hay problemas para cargarla */
+    background-color: #fff;
+    /*
+    height:60em; 
+    background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    overflow: hidden;
+    */
+}
+
+
+
+
+
+
+#container{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 500px;
+    height: 300px;
+    border-radius: 5px;
+    background: rgba(3, 3, 3, 0.707);
+    box-shadow: 1px 1px 50px #000;
+
+}   
+
+/* Heading */
+h1{
+    font-family: 'Open Sans Condensed', sans-serif;
+    position: relative;
+    text-align: center;
+    font-size: 50px;
+    color: rgb(255, 255, 255);
+    transition: font-size 0.5s;
+}
+
+h1:hover{
+    font-size: 55px;
+}
+
+
+.btnLogin, .btnRegister,
+input{
+    font-family: 'Open Sans Condensed', sans-serif;
+    text-decoration: none;
+
+    position: relative;
+    width: 80%;
+    display: block;
+    margin: 9px auto;
+    font-size: 17px;
+    color: #fff;
+    padding: 8px;
+    border-radius: 6px;
+    border: none;
+
+    background: rgba(3,3,3,.1);
+    
+}
+
+
+.btnLogin{
+    
+    font-family: 'Open Sans Condensed' sans-serif;
+    text-align: center;
+    padding: 6px 8px;
+
+    background-color: rgba(1, 150, 9, 0.344);
+    transition: background-color 1s, font-size 0.5s;
+}
+  
+.btnLogin:hover {
+    background-color: rgba(43, 255, 0, 0.823);
+    font-size: 25px;
+}
+
+
+.btnRegister{
+    font-family: 'Open Sans Condensed' sans-serif;
+    text-align: center;
+    padding: 6px 8px;
+    width: 60%;
+
+
+    background-color: rgba(55, 63, 109, 0.296);
+    transition: background-color 1s, font-size 0.5s;
+}
+
+.btnRegister:hover{
+    background-color: rgba(0, 17, 255, 0.816);
+    font-size: 22px;
+}

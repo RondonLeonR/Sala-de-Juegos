@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head></head>
+<body>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <div id="container">
+        <h1>Login</h1>
+        <br>
+        <form>
+            <input type="text" name="eemail" placeholder="E-mail" [(ngModel)]="userAux.email">
+            <input type="password" name="password" placeholder="Password" [(ngModel)]="userAux.pass">
+            <button class="btnLogin" (click)="onLogin()">Login</button>
+            <button class="btnRegister" routerLink="/register">Register</button>
+        </form>
+    </div>
+
+</body>
+
+</html>
