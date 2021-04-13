@@ -5,6 +5,7 @@ import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
 
 
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -17,7 +18,8 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private auth: AuthService,
-    private router: Router
+    private router: Router,
+    
   ) {
     this.userAux = new Usuario();
   }
@@ -26,13 +28,14 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  async onLogin() {
+  public onLogin() {
 
     this.auth.ShareOne(this.userAux).valueChanges().subscribe(result => {
       if (result.length == 1) {
         console.log("Found!");
         localStorage.setItem('token', this.userAux.email);
-        this.router.navigateByUrl("home");
+        window.location.href="/home"
+        //this.router.navigateByUrl("/home");
       }
       else {
         window.alert("Error! Wrong email or password");

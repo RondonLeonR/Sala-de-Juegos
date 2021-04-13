@@ -44,38 +44,3 @@ h1{
     color: rgb(255, 255, 255);
 }
 
-
-.btnReturn,
-input{
-    font-family: 'Open Sans Condensed', sans-serif;
-    text-decoration: none;
-
-    position: relative;
-    width: 80%;
-    display: block;
-    margin: 9px auto;
-    font-size: 17px;
-    color: #fff;
-    padding: 8px;
-    border-radius: 6px;
-    border: none;
-
-    background: rgba(3,3,3,.1);
-    
-}
-
-
-.btnReturn{
-    
-    font-family: 'Open Sans Condensed' sans-serif;
-    text-align: center;
-    padding: 6px 8px;
-    font-size: 20px;
-
-    background-color: rgba(252, 79, 209, 0.296);
-    transition: background-color 1s;
-}
-  
-.btnReturn:hover {
-    background-color: rgba(255, 0, 191, 0.672);
-}

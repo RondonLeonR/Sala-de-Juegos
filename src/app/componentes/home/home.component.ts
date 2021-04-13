@@ -2,6 +2,7 @@ import { WrappedNodeExpr } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 
 import { Router } from '@angular/router';
+import { isJSDocThisTag } from 'typescript';
 
 @Component({
   selector: 'app-home',
@@ -10,25 +11,34 @@ import { Router } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
 
-  token:any;
+  public tokenhome: any;
+  
+  public flag: any;
 
   constructor(
     private router: Router
-  ) { }
+  ) { 
+    
+  }
 
   ngOnInit(): void {
-    this.token = localStorage.getItem('token');
-    if(this.token == null)
-    {
-      window.alert("Login pls!");
-      this.router.navigateByUrl("login");
+    this.tokenhome = localStorage.getItem('token');
+    if (this.tokenhome == null) {
+      this.flag = false;
+    }
+    else {
+      this.flag = true;
     }
   }
 
-  logOut()
-  {
+  logOut() {
     localStorage.removeItem('token');
-    this.router.navigateByUrl("login");
+    
+    window.alert("Deslogeado. CAMBIAR!!!");
+    window.location.reload();
+    this.router.navigateByUrl("/home");
   }
+
+
 
 }

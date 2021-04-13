@@ -1,15 +1,91 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head></head>
-<body>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <div id="container">
-        <form>
-            <h1>hasta aca llegue...  /home</h1>
-            <button class="btnReturn" (click)="logOut()">Go to Login</button>
-        </form>
-    </div>
 
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+
+            <ul class="navbar-nav mr-auto">
+
+                <a class="navbar-brand" routerLink="/home">Home</a>
+
+
+                <li class="nav-item">
+                    <a class="button" class="nav-link" data-toggle="modal" data-target="#exampleModal">Chat</a>
+                </li>
+
+
+                <li class="nav-item">
+                    <a class="button" class="nav-link" routerLink="/juegos" >Juegos</a>
+                </li>
+                
+            </ul>
+
+
+            <div>
+                <div *ngIf="this.tokenhome!=null">
+                    <button class="btn btn-outline-danger my-2 my-sm-0" type="submit" (click)="logOut()">Logout</button>
+
+                </div>
+                <div *ngIf="this.tokenhome==null">
+
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit"
+                        routerLink="/login">Login</button>
+                    <button class="btn btn-outline-primary my-2 my-sm-0 ml-2" type="submit"
+                        routerLink="/register">Register</button>
+                </div>
+            </div>
+        </div>
+
+    </nav>
+
+    <br>
+    <br>
+    <br>
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+
+        <div class="modal-dialog" role="document">
+            <div *ngIf="this.tokenhome == null">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Alert!!</h5>
+                    </div>
+                    <div class="modal-body">
+                        Necesita logearse para ingresar al Chat
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Seguir Navegando</button>
+                        <button type="button" class="btn btn-outline-primary" data-dismiss="modal" routerLink="/login">Login</button>
+                    </div>
+                </div>
+            </div>
+            <div *ngIf="this.tokenhome != null">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Confirmacion</h5>
+                    </div>
+                    <div class="modal-body">
+                        Continuar como {{this.tokenhome}}
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-outline-primary" data-dismiss="modal" routerLink="/chat">Continuar</button>
+                        <button type="button" class="btn btn-outline-success" data-dismiss="modal" routerLink="/login">Registrar con otro</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
 </body>
 
 </html>

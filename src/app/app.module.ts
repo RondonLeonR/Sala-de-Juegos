@@ -13,6 +13,10 @@ import { AngularFireModule } from '@angular/fire/';
 
 import { environment } from 'src/environments/environment';
 import { RegisterComponent } from './componentes/register/register.component';
+import { TatetiComponent } from './componentes/juegos/tateti/tateti.component';
+import { ChatComponent } from './componentes/chat/chat.component';
+import { JuegosComponent } from './componentes/juegos/juegos.component';
+import { PiedraPapeloTijeraComponent } from './componentes/juegos/piedra-papelo-tijera/piedra-papelo-tijera.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +24,12 @@ import { RegisterComponent } from './componentes/register/register.component';
     LoginComponent,
     HomeComponent,
     QuienSoyComponent,
-    RegisterComponent
+    RegisterComponent,
+    TatetiComponent,
+    ChatComponent,
+    JuegosComponent,
+    PiedraPapeloTijeraComponent,
+    
   ],
   imports: [
     BrowserModule,

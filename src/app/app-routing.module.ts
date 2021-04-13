@@ -1,12 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from '../app/componentes/login/login.component';
+import { ChatComponent } from './componentes/chat/chat.component';
 import { HomeComponent } from './componentes/home/home.component';
+import { JuegosComponent } from './componentes/juegos/juegos.component';
+import { PiedraPapeloTijeraComponent } from './componentes/juegos/piedra-papelo-tijera/piedra-papelo-tijera.component';
+import { TatetiComponent } from './componentes/juegos/tateti/tateti.component';
 import { RegisterComponent } from './componentes/register/register.component';
 
 const routes: Routes = [
   {
-    path: '', redirectTo: 'login', pathMatch: 'full'
+    path: '', redirectTo: 'home', pathMatch: 'full'
   },
   {
     path: 'login', component: LoginComponent
@@ -16,6 +20,18 @@ const routes: Routes = [
   },
   {
     path: 'register', component: RegisterComponent
+  },
+  {
+    path: 'tateti', component: TatetiComponent
+  },
+  {
+    path: 'piedrapapelotijera', component: PiedraPapeloTijeraComponent
+  },
+  {
+    path: 'chat', component: ChatComponent
+  },
+  {
+    path: 'juegos', component: JuegosComponent
   },
 ];
 

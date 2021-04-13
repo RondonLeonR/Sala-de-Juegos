@@ -1,32 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Exo:100,200,400);
-@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:700,400,300);
 
-
-body{
-
-    background: url('../../../assets/imagen/mario.gif');
-    background-position: center center;
-    background-repeat: no-repeat;
-    /* La imagen se fija en la ventana de visualización para 
-    que la altura de la imagen no supere a la del contenido */
-    background-attachment:fixed;
-
-    /* La imagen de fondo se reescala automáticamente con el
-    cambio del ancho de ventana del navegador */
-    background-size:cover;
-
-    /* Se muestra un color de fondo mientras se está cargando la imagen
-    de fondo o si hay problemas para cargarla */
-    background-color: #fff;
-    /*
-    height:60em; 
-    background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    overflow: hidden;
-    */
-}
 
 
 
@@ -63,7 +35,7 @@ h1:hover{
 }
 
 
-.btnLogin, .btnRegister,
+.btnLogin, .btnCancel,
 input{
     font-family: 'Open Sans Condensed', sans-serif;
     text-decoration: none;
@@ -99,18 +71,18 @@ input{
 }
 
 
-.btnRegister{
+.btnCancel{
     font-family: 'Open Sans Condensed' sans-serif;
     text-align: center;
     padding: 6px 8px;
     width: 60%;
 
 
-    background-color: rgba(55, 63, 109, 0.296);
+    background-color: rgba(109, 55, 55, 0.296);
     transition: background-color 1s, font-size 0.5s;
 }
 
-.btnRegister:hover{
-    background-color: rgba(0, 17, 255, 0.816);
+.btnCancel:hover{
+    background-color: rgba(225, 42, 29, 0.816);
     font-size: 22px;
 }

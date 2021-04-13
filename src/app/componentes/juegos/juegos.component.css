@@ -1,0 +1,31 @@
+#container{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 600px;
+    height: 300px;
+    border-radius: 5px;
+    background: rgba(3, 3, 3, 0.707);
+    box-shadow: 1px 1px 50px #000;
+
+    padding-top: 120px;
+    padding-left: 140px;
+}
+
+h1{
+    font-family: 'Open Sans Condensed', sans-serif;
+    text-align: center;
+    font-size: 30px;
+    color: rgb(255, 255, 255);
+}
+
+
+.tateti{
+}
+
+.ppt{
+    
+}
