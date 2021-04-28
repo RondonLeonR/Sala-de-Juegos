@@ -1,0 +1,24 @@
+#container{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 500px;
+    height: 340px;
+    border-radius: 5px;
+    background: rgba(3, 3, 3, 0.707);
+    box-shadow: 1px 1px 50px #000;
+
+}   
+
+/* Heading */
+h1{
+    font-family: 'Open Sans Condensed', sans-serif;
+    position: relative;
+    text-align: center;
+    font-size: 50px;
+    color: rgb(255, 255, 255);
+    transition: font-size 0.5s;
+}

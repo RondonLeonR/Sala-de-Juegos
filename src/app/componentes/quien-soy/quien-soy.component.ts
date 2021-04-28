@@ -6,10 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./quien-soy.component.css']
 })
 export class QuienSoyComponent implements OnInit {
+  token = "Nadie aun";
 
   constructor() { }
 
   ngOnInit(): void {
+    this.token = localStorage.getItem('token');
   }
 
 }

@@ -4,8 +4,10 @@ import { LoginComponent } from '../app/componentes/login/login.component';
 import { ChatComponent } from './componentes/chat/chat.component';
 import { HomeComponent } from './componentes/home/home.component';
 import { JuegosComponent } from './componentes/juegos/juegos.component';
+import { MemotestComponent } from './componentes/juegos/memotest/memotest.component';
 import { PiedraPapeloTijeraComponent } from './componentes/juegos/piedra-papelo-tijera/piedra-papelo-tijera.component';
 import { TatetiComponent } from './componentes/juegos/tateti/tateti.component';
+import { QuienSoyComponent } from './componentes/quien-soy/quien-soy.component';
 import { RegisterComponent } from './componentes/register/register.component';
 
 const routes: Routes = [
@@ -32,6 +34,12 @@ const routes: Routes = [
   },
   {
     path: 'juegos', component: JuegosComponent
+  },
+  {
+    path: 'quiensoy', component: QuienSoyComponent
+  },
+  {
+    path: 'memotest', component: MemotestComponent
   },
 ];
 

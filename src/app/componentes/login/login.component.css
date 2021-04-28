@@ -1,10 +1,3 @@
-
-
-
-
-
-
-
 #container{
     position: absolute;
     top: 0;
@@ -13,7 +6,7 @@
     bottom: 0;
     margin: auto;
     width: 500px;
-    height: 300px;
+    height: 340px;
     border-radius: 5px;
     background: rgba(3, 3, 3, 0.707);
     box-shadow: 1px 1px 50px #000;
@@ -35,7 +28,7 @@ h1:hover{
 }
 
 
-.btnLogin, .btnCancel,
+.btnLogin, .btnCancel, .btnIngresoRapido,
 input{
     font-family: 'Open Sans Condensed', sans-serif;
     text-decoration: none;
@@ -68,6 +61,20 @@ input{
 .btnLogin:hover {
     background-color: rgba(43, 255, 0, 0.823);
     font-size: 25px;
+}
+
+.btnIngresoRapido{
+    
+    text-align: center;
+    padding: 2px 4px;
+
+    background-color: rgba(189, 179, 35, 0.611);
+    transition: background-color 1s, font-size 0.5s;
+}
+
+.btnIngresoRapido:hover {
+    background-color: rgba(229, 255, 0, 0.912);
+    font-size: 20px;
 }
 
 

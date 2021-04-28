@@ -1,8 +1,9 @@
-import { WrappedNodeExpr } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 
 import { Router } from '@angular/router';
-import { isJSDocThisTag } from 'typescript';
+
+//Alert
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-home',
@@ -12,13 +13,12 @@ import { isJSDocThisTag } from 'typescript';
 export class HomeComponent implements OnInit {
 
   public tokenhome: any;
-  
+
   public flag: any;
 
   constructor(
     private router: Router
-  ) { 
-    
+  ) {
   }
 
   ngOnInit(): void {
@@ -32,13 +32,31 @@ export class HomeComponent implements OnInit {
   }
 
   logOut() {
+    //this.alert();
     localStorage.removeItem('token');
-    
-    window.alert("Deslogeado. CAMBIAR!!!");
     window.location.reload();
     this.router.navigateByUrl("/home");
+
   }
 
+  alert() {
+    const Toast = Swal.mixin({
+      toast: true,
+      position: 'top-end',
+      showConfirmButton: false,
+      timer: 3000,
+      timerProgressBar: true,
+      didOpen: (toast) => {
+        toast.addEventListener('mouseenter', Swal.stopTimer)
+        toast.addEventListener('mouseleave', Swal.resumeTimer)
+      }
+    })
+
+    Toast.fire({
+      icon: 'error',
+      title: 'Log out!'
+    })
+  }
 
 
 }

@@ -1,0 +1,78 @@
+<!--<div id="container">
+
+    <button *ngIf="!inicio" (click)="CargarFotos()">Iniciar Juego</button>
+
+    <table *ngIf="inicio" style="width:500px;height:400px;text-align: center" align="center" class="tablero">
+
+        <tr>
+            <td id="cell11" class="cell"><img  style="width: 100px;" src="../../../../assets/imagen/controller.ico"></td>
+            <td class="cell"><img id="cell12" style="width: 100px;" src="../../../../assets/imagen/controller.ico"></td>
+            <td class="cell"><img id="cell13" style="width: 100px;" src="../../../../assets/imagen/controller.ico"></td>
+            <td class="cell"><img id="cell14" style="width: 100px;" src="../../../../assets/imagen/controller.ico"></td>
+        </tr>
+        <tr>
+            <td class="cell"><img id="cell11" style="width: 100px;" src="../../../../assets/imagen/controller.ico"></td>
+            <td class="cell"><img id="cell22" style="width: 100px;" src="../../../../assets/imagen/controller.ico"></td>
+            <td class="cell"><img id="cell23" style="width: 100px;" src="../../../../assets/imagen/controller.ico"></td>
+            <td class="cell"><img id="cell24" style="width: 100px;" src="../../../../assets/imagen/controller.ico"></td>
+        </tr>
+        <tr>
+            <td class="cell"><img id="cell11" style="width: 100px;" src="../../../../assets/imagen/controller.ico"></td>
+            <td class="cell"><img id="cell32" style="width: 100px;" src="../../../../assets/imagen/controller.ico"></td>
+            <td class="cell"><img id="cell33" style="width: 100px;" src="../../../../assets/imagen/controller.ico"></td>
+            <td class="cell"><img id="cell34" style="width: 100px;" src="../../../../assets/imagen/controller.ico"></td>
+        </tr>
+
+    </table>
+
+</div>-->
+<div id="container">
+    <div class="selector-dificultad" *ngIf="dificultad == null">
+        <p class="dificultad-titulo">
+            Seleccione alguna dificultad
+        </p>
+    
+        <button mat-raised-button color="primary" expand="block" class="dificultad-button"
+            (click)="seleccionaDificultad('facil')">
+            Facil
+        </button>
+        <button mat-raised-button color="primary" expand="block" class="dificultad-button"
+            (click)="seleccionaDificultad('medio')">
+            Medio
+        </button>
+        <button mat-raised-button color="primary" expand="block" class="dificultad-button"
+            (click)="seleccionaDificultad('dificil')">
+            Dificil
+        </button>
+    </div>
+    
+    <div class="juego" *ngIf="dificultad != null">
+    
+        <div *ngFor="let carta of img; index as i" [class]="carta.clase" (click)="DarVueltaCarta(i)">
+            <img [src]="carta.mostrar ? carta.path : carta.atras" class="carta-imagen" alt="carta">
+        </div>
+    
+        <div class="botones" *ngIf="!inicio && dificultad != null">
+            <button mat-raised-button class="memotest-boton" color="primary" (click)="empezarJuego()">
+                Empezar
+            </button>
+        </div>
+    
+        <div class="mensaje" *ngIf="mensaje && dificultad">
+            <p class="mensaje-p">
+                {{mensaje}}
+            </p>
+        </div>
+    
+      
+    
+        <div class="botones" *ngIf="!inicio && dificultad != null">
+            <button mat-raised-button class="memotest-boton" color="primary" (click)="cambiarDificultad()">
+                Cambiar dificultad
+            </button>
+        </div>
+    
+    </div>
+
+</div>
+
