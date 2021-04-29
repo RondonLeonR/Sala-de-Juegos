@@ -25,12 +25,14 @@
     <p class="infoJuego">{{jugadaRealizada}}</p>
     <button class="btn btn-outline-success btnGuardarScores" data-toggle="modal" data-target="#modalGuardar">Guardar
         Score</button>
+    <button class="btn btn-outline-primary btnChat" data-toggle="modal" data-target="#modalChat">Chat</button>
+
     <button class="btn btn-outline-danger btnVerScores" (click)="tableroGanadores()" data-toggle="modal"
         data-target="#modalScores">Ver Scores</button>
 
 
 
-    <!-- Modal -->
+    <!-- Modal Guardar Score -->
     <div class="modal fade" id="modalGuardar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
 
@@ -90,6 +92,18 @@
                         <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Cerrar</button>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Modal Chat-->
+    <div class="modal fade" id="modalChat" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <app-chat [nombreChat]="'Chat PPT'" [app]="'ppt'"></app-chat>
             </div>
         </div>
     </div>

@@ -109,10 +109,13 @@
 }
 
 .btnVerScores{
-    margin-left: 450px;
+    margin-left: 200px;
 }
 
 .btnGuardarScores{
     margin-left: 10px;
 }
 
+.btnChat{
+    margin-left: 180px;
+}

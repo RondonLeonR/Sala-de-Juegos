@@ -99,9 +99,13 @@
 
 
 .btnGuardar{
-    margin-left: 200px;
+    margin-left: 110px;
 }
 
 .btnScores{
-    margin-left: 190px;
+    margin-left: 100px;
+}
+
+.btnChat{
+    margin-left: 120px;
 }

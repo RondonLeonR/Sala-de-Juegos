@@ -27,52 +27,60 @@
 
 </div>-->
 <div id="container">
+    <p *ngIf="this.inicio" style="color: white;" class="mensaje-p">
+        Tiempo: {{this.tiempo}}
+    </p>
     <div class="selector-dificultad" *ngIf="dificultad == null">
         <p class="dificultad-titulo">
-            Seleccione alguna dificultad
+            Seleccione la dificultad
         </p>
-    
-        <button mat-raised-button color="primary" expand="block" class="dificultad-button"
-            (click)="seleccionaDificultad('facil')">
+
+        <button class="btn btn-outline-success btnDificultad" (click)="seleccionaDificultad('facil')">
             Facil
         </button>
-        <button mat-raised-button color="primary" expand="block" class="dificultad-button"
-            (click)="seleccionaDificultad('medio')">
+        <button class="btn btn-outline-danger btnDificultad" (click)="seleccionaDificultad('medio')">
             Medio
         </button>
-        <button mat-raised-button color="primary" expand="block" class="dificultad-button"
-            (click)="seleccionaDificultad('dificil')">
-            Dificil
-        </button>
+        <br>
     </div>
-    
-    <div class="juego" *ngIf="dificultad != null">
-    
-        <div *ngFor="let carta of img; index as i" [class]="carta.clase" (click)="DarVueltaCarta(i)">
-            <img [src]="carta.mostrar ? carta.path : carta.atras" class="carta-imagen" alt="carta">
+
+    <div id="juego" *ngIf="dificultad != null">
+
+        <div *ngFor="let carta of cartas; index as i" [class]="carta.clase" (click)="voltear(i)">
+            <img [src]="carta.mostrar ? carta.path : carta.atras" class="carta-imagen"
+                style="width: 150px; height: 150px;" alt="carta">
         </div>
+    </div>
+
     
+    <div *ngIf="!inicio && dificultad != null" class="resultadoBotones">
         <div class="botones" *ngIf="!inicio && dificultad != null">
-            <button mat-raised-button class="memotest-boton" color="primary" (click)="empezarJuego()">
-                Empezar
+            <button class="btn btn-outline-success btnEmpezar" (click)="empezarJuego()">
+                {{this.btnEmpezar}}
             </button>
-        </div>
+            <button class="btn btn-outline-primary btnScore">Ver Scores</button>
+            <button class="btn btn-outline-warning btnCambiarDificultad" (click)="cambiarDificultad()">Cambiar dificultad</button>
+            <button class="btn btn-outline-danger btnChat" data-toggle="modal" data-target="#modalChat">Chat</button>
     
+        </div>
+        <br>
         <div class="mensaje" *ngIf="mensaje && dificultad">
             <p class="mensaje-p">
                 {{mensaje}}
             </p>
         </div>
     
-      
     
-        <div class="botones" *ngIf="!inicio && dificultad != null">
-            <button mat-raised-button class="memotest-boton" color="primary" (click)="cambiarDificultad()">
-                Cambiar dificultad
-            </button>
+        <!-- Modal Chat-->
+        <div class="modal fade" id="modalChat" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+    
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <app-chat [nombreChat]="'Chat MemoTest'" [app]="'memotest'"></app-chat>
+                </div>
+            </div>
         </div>
-    
     </div>
-
 </div>
 

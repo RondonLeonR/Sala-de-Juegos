@@ -1,5 +1,5 @@
 .msg_card_body{
-  overflow-y: auto;
+  overflow-y:scroll;
 }
 
 .msg_card_body::-webkit-scrollbar{
@@ -9,7 +9,15 @@
 
 .msg_card_body::-webkit-scrollbar-thumb{
   background: #3eff4f;
+  border-radius: 4px;
+
 }
+
+.msg_card_body::-webkit-scrollbar-thumb:active  {
+  background: #f00606;
+  box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+}
+
 
 .chat{
   position: absolute;
@@ -17,8 +25,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  margin: auto;
-  width: 700px;
+  width: 500px;
   height: 400px;  
   color: #fff;
 
@@ -29,7 +36,7 @@
 .card{
   height: 500px;
   border-radius: 15px !important;
-  background-color: rgba(0, 0, 0, 0.364) !important;
+  background-color: rgba(0, 0, 0, 0.77) !important;
 }
 
 

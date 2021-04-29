@@ -15,18 +15,18 @@
 
                 <a class="navbar-brand" routerLink="/home">Home</a>
 
-
+                <!--
                 <li class="nav-item">
                     <a class="button" class="nav-link" data-toggle="modal" data-target="#exampleModal">Chat</a>
                 </li>
-
+                -->
 
                 <li class="nav-item">
-                    <a class="button" class="nav-link" routerLink="/juegos" >Juegos</a>
+                    <a class="button" class="nav-link" data-toggle="modal" data-target="#exampleModal">Juegos</a>
                 </li>
                 
                 <li class="nav-item">
-                    <a class="button" class="nav-link" routerLink="/quiensoy" >Quien Soy</a>
+                    <a class="button" class="nav-link" routerLink="/quiensoy">Quien Soy</a>
                 </li>
             </ul>
 
@@ -64,7 +64,7 @@
                         <h5 class="modal-title" id="exampleModalLabel">Alert!!</h5>
                     </div>
                     <div class="modal-body">
-                        Necesita logearse para ingresar al Chat
+                        Necesita logearse para ingresar!
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Seguir Navegando</button>
@@ -81,7 +81,7 @@
                         Continuar como {{this.tokenhome}}
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-outline-primary" data-dismiss="modal" routerLink="/chat">Continuar</button>
+                        <button type="button" class="btn btn-outline-primary" data-dismiss="modal" routerLink="/juegos">Juegos</button>
                         <button type="button" class="btn btn-outline-success" data-dismiss="modal" routerLink="/login">Registrar con otro</button>
                     </div>
                 </div>

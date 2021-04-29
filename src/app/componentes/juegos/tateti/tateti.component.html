@@ -1,6 +1,6 @@
 <div id="container">
-    
-        <div class="title">
+
+    <div class="title">
         <h1>Juego Ta Te Ti (Modo Facil)</h1>
     </div>
     <div class="score">
@@ -13,32 +13,34 @@
     </div>
     <table style="width:250px;height:250px;text-align: center" align="center" class="tablero">
         <tr>
-            <td id="cell11" class="cell" ></td>
-            <td id="cell12" class="cell" ></td>
-            <td id="cell13" class="cell" ></td>
+            <td id="cell11" class="cell"></td>
+            <td id="cell12" class="cell"></td>
+            <td id="cell13" class="cell"></td>
         </tr>
         <tr>
-            <td id="cell21" class="cell" ></td>
-            <td id="cell22" class="cell" ></td>
-            <td id="cell23" class="cell" ></td>
+            <td id="cell21" class="cell"></td>
+            <td id="cell22" class="cell"></td>
+            <td id="cell23" class="cell"></td>
         </tr>
         <tr>
-            <td id="cell31" class="cell" ></td>
-            <td id="cell32" class="cell" ></td>
-            <td id="cell33" class="cell" ></td>
+            <td id="cell31" class="cell"></td>
+            <td id="cell32" class="cell"></td>
+            <td id="cell33" class="cell"></td>
         </tr>
     </table>
 
     <p class="info">{{resultado}}</p>
-    <p class="info">+15 win  -20 loss +5 draw</p>
+    <p class="info">+15 win -20 loss +5 draw</p>
 
 
-    <button class="btn btn-outline-danger btnRestart" id="reset" value="RESET" >Reiniciar</button>
-    <button class="btn btn-outline-success btnGuardar" data-toggle="modal" data-target="#modalGuardar">Guardar Score</button>
+    <button class="btn btn-outline-danger btnRestart" id="reset" value="RESET">Reiniciar</button>
+    <button class="btn btn-outline-primary btnChat" data-toggle="modal" data-target="#modalChat">Chat</button>
+    <button class="btn btn-outline-success btnGuardar" data-toggle="modal" data-target="#modalGuardar">Guardar
+        Score</button>
     <button class="btn btn-outline-warning btnScores" data-toggle="modal" data-target="#modalScores">Scores</button>
 
 
-    <!-- Modal -->
+    <!-- Modal Guardar Score-->
     <div class="modal fade" id="modalGuardar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
 
@@ -62,7 +64,7 @@
         </div>
     </div>
 
-    <!-- Modal -->
+    <!-- Modal Score -->
     <div class="modal fade" id="modalScores" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
 
@@ -98,6 +100,17 @@
                         <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Cerrar</button>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Chat-->
+    <div class="modal fade" id="modalChat" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <app-chat [nombreChat]="'Chat Tateti'" [app]="'tateti'"></app-chat>
             </div>
         </div>
     </div>

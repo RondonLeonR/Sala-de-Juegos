@@ -5,34 +5,133 @@
     right: 0;
     bottom: 0;
     margin: auto;
-    width: 700px;
+    width: 750px;
     height: 600px;
     border-radius: 5px;
     background: rgba(0, 0, 0, 0.727);
     box-shadow: 1px 1px 50px rgba(7, 36, 253, 0.727);
 
 }   
-
-#juego {
-    width: 100px;
-    height: 100px;
+#juego{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto auto auto auto;
+    margin-left: 20px;
+    margin-top: 10px;
+    
 }
 
-
-.tablero {
-    margin-top: 50px;
-}
-
-
-td{
-    width: 10px;
-    height: 10px;
-    background-color: black;
-    border: 3px solid rgb(255, 0, 0);
+.resultadoBotones{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 400px;
+    height: 430px;
     border-radius: 5px;
+    background: rgba(0, 0, 0, 0.571);
+    box-shadow: 1px 1px 50px rgba(7, 36, 253, 0.727);
 }
 
-.img{
-    transform: scale(0.25);
+
+
+.carta{
+    padding: 5px;
+    width: 90%;
+    height: auto;
+    min-width: 150px;
+    min-height: 150px;
+
 }
 
+.carta-animada{
+    padding: 5px;
+    width: 90%;
+    height: auto;
+    min-width: 150px;
+    min-height: 150px;
+
+    
+
+    
+    animation-name: girar;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    
+}
+
+
+.btnEmpezar{
+    margin-top: 40px;
+    margin-left: 75px;
+    width: 250px;
+}
+
+.btnCambiarDificultad{
+    margin-top: 20px;
+    margin-left: 75px;
+    width: 250px;
+}
+
+.btnScore{
+    margin-top: 20px;
+    margin-left: 75px;
+    width: 250px;
+}
+
+.btnChat{
+    margin-top: 20px;
+    margin-left: 75px;
+    width: 250px;
+}
+
+
+.selector-dificultad{
+    color: white;
+    font-size: 30px;
+    margin-left: 175px;
+    margin-top: 220px;
+    width: 400px
+}
+
+.dificultad-titulo{
+    margin-left: 50px;
+}
+
+.btnDificultad{
+    margin-left: 90px;
+}
+
+.mensaje{
+
+    color: white;
+    width: auto;
+    border-radius: 10px;
+    padding: 10px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: white;
+
+}
+
+
+
+
+.mensaje-p{
+    text-align: center;
+    font-weight: 800;
+    font-size: large;
+}
+
+
+@keyframes girar{
+    from{
+        transform:rotateY(0deg);
+    }50%{
+        transform:rotateY(180deg);
+    }100%{
+        transform:rotateY(360deg);
+    }
+}

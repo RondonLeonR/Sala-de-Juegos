@@ -13,6 +13,9 @@ import Swal, { SweetAlertIcon } from 'sweetalert2';
 })
 
 export class TatetiComponent implements OnInit {
+
+  nombreChat = "Chat Tateti";
+
   public token: any;
   resultado = "Formar un Vertical, Horizontal o Diagonal con la X";
 
