@@ -1,5 +1,6 @@
 .msg_card_body{
   overflow-y:scroll;
+  z-index: 100;
 }
 
 .msg_card_body::-webkit-scrollbar{

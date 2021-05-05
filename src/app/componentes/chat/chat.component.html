@@ -51,12 +51,14 @@
                 </div>
             </div>
         </div>
-        <div class="card-body msg_card_body">
+        <div class="card-body msg_card_body" #scrollframe>
             <div *ngFor="let item of lista | async">
                 <div *ngIf="item.usuario == token">
                     <div class="d-flex justify-content-end mb-4">
                         <div class="msg_container_send">
                             {{item.mensaje}}
+                            <span class="msg_time_send">{{item.hora}}</span>
+                            <span class="msg_user_send">{{item.usuario}}</span>
                         </div>
                     </div>
                 </div>
