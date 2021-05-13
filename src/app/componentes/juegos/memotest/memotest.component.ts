@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Scoresrpt } from 'src/app/clases/scoresrpt';
+import { GameMemotestService } from 'src/app/services/game-memotest.service';
 import { MovieApiService } from '../../../services/movie-api.service';
 
 
@@ -48,11 +50,18 @@ export class MemotestComponent implements OnInit {
   ///MODAL
   juegoterminado = true;
 
+  ///SCORE
+  lista = this.gamesrc.GetAll().valueChanges();
+  scoreNuevo : Scoresrpt;
+  tiempoScore = 0;
 
 
   constructor(
-    private movieApi: MovieApiService
-  ) { }
+    private movieApi: MovieApiService,
+    private gamesrc : GameMemotestService
+  ) {
+    this.scoreNuevo = new Scoresrpt();
+   }
 
   ngOnInit(): void {
     this.movieApi.getMoviesImages().subscribe(data => {
@@ -123,6 +132,11 @@ export class MemotestComponent implements OnInit {
     this.colorMensaje = "#FFF";
     this.inicio = false;
     this.btnEmpezar = "Reiniciar";
+
+    this.scoreNuevo.score = this.tiempoScore;
+    console.log(this.tiempoScore);
+    this.scoreNuevo.name = localStorage.getItem('token');
+    this.gamesrc.AgregarScore(this.scoreNuevo);
     //SCORE
     //this.agregarTiempo();
 
@@ -185,11 +199,13 @@ export class MemotestComponent implements OnInit {
   empezarTimer(){
     this.intervalo = setInterval(() => {
       this.segundos++;
+      this.tiempoScore++;
       this.tiempo =  "0"+this.minutos + ":" + this.segundos
       //console.log(this.segundos);
       if(this.segundos === 60){
         this.minutos++;
         this.segundos = 0;
+        this.tiempoScore +=100;
       }
     },1000)
   }
@@ -227,5 +243,11 @@ export class MemotestComponent implements OnInit {
       b[j] = x;
     }
     return b;
+  }
+
+
+  tableroGanadores(): void {
+    this.lista = this.gamesrc.GetAll().valueChanges();
+    console.log(this.lista);
   }
 }

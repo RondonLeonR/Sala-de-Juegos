@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -22,6 +22,7 @@ import { MemotestComponent } from './componentes/juegos/memotest/memotest.compon
 
 //API
 import { HttpClientModule } from '@angular/common/http';
+import { FormularioComponent } from './componentes/formulario/formulario.component';
 
 
 
@@ -36,13 +37,15 @@ import { HttpClientModule } from '@angular/common/http';
     ChatComponent,
     JuegosComponent,
     PiedraPapeloTijeraComponent,
-    MemotestComponent
+    MemotestComponent,
+    FormularioComponent
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     AngularFireModule.initializeApp(environment.firebase)
   ],

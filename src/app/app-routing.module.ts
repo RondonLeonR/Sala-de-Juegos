@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from '../app/componentes/login/login.component';
 import { ChatComponent } from './componentes/chat/chat.component';
+import { FormularioComponent } from './componentes/formulario/formulario.component';
 import { HomeComponent } from './componentes/home/home.component';
 import { JuegosComponent } from './componentes/juegos/juegos.component';
 import { MemotestComponent } from './componentes/juegos/memotest/memotest.component';
@@ -24,10 +25,7 @@ const routes: Routes = [
     path: 'register', component: RegisterComponent
   },
   {
-    path: 'tateti', component: TatetiComponent
-  },
-  {
-    path: 'piedrapapelotijera', component: PiedraPapeloTijeraComponent
+    path: 'formulario', component: FormularioComponent
   },
   {
     path: 'chat', component: ChatComponent
@@ -39,8 +37,19 @@ const routes: Routes = [
     path: 'quiensoy', component: QuienSoyComponent
   },
   {
-    path: 'memotest', component: MemotestComponent
-  },
+    path: "juegos",
+    children: [
+      {
+        path: 'memotest',component: MemotestComponent
+      },
+      {
+        path: 'piedrapapelotijera', component: PiedraPapeloTijeraComponent
+      },
+      {
+        path: 'tateti', component: TatetiComponent
+      },
+    ]
+  }
 ];
 
 @NgModule({

@@ -1,0 +1,152 @@
+<div id="container">
+    <div class="mt-3">
+        <div style="color: white;" class="col-md-20 align-self-center">
+            <h2 style="margin-left: 40%;">Formulario</h2>
+            <form class="form-control  h-40 text-white formulario" [formGroup]="encuestaForm">
+
+                <!--NOMBRE-->
+                <div class="row">
+                    <div class="col">
+                        <label for="">Nombre:</label>
+
+                        <span *ngIf="encuestaForm.get('nombre')?.errors && 
+                            (encuestaForm.get('nombre')?.dirty || encuestaForm.get('nombre')?.touched)">
+                            <small class="text-danger" *ngIf="encuestaForm.get('nombre')?.hasError('required')">
+                                Nombre Obligatorio!
+                            </small>
+                        </span>
+                        <input type="text" class="form-control" formControlName="nombre" placeholder="Nombre">
+                    </div>
+                    <!--APELLIDO-->
+                    <div class="col">
+                        <label for="">Apellido:</label>
+
+                        <span *ngIf="encuestaForm.get('apellido')?.errors && 
+                            (encuestaForm.get('apellido')?.dirty || encuestaForm.get('apellido')?.touched)">
+                            <small class="text-danger" *ngIf="encuestaForm.get('apellido')?.hasError('required')">
+                                Apellido Obligatorio!
+                            </small>
+                        </span>
+
+                        <input type="text" class="form-control" placeholder="Apellido" formControlName="apellido">
+                    </div>
+                </div>
+                <!--EDAD-->
+                <div class="row">
+                    <div class="col">
+                        <label for="">Edad:</label>
+
+                        <span *ngIf="encuestaForm.get('edad')?.errors && 
+                            (encuestaForm.get('edad')?.dirty || encuestaForm.get('edad')?.touched)">
+                            <small class="text-danger" *ngIf="encuestaForm.get('edad')?.hasError('required')">
+                                Edad Obligaria!
+                            </small>
+                        </span>
+
+                        <span *ngIf="encuestaForm.get('edad')?.errors && 
+                        (encuestaForm.get('edad')?.dirty || encuestaForm.get('edad')?.touched)">
+                            <small class="text-danger" *ngIf="encuestaForm.get('edad')?.hasError('min')">
+                                *Edad minima 18 años
+                            </small>
+                        </span>
+
+                        <input type="number" class="form-control" min="18" max="99" maxlength="2" required
+                            formControlName="edad" placeholder="Edad">
+                    </div>
+                    <div class="col">
+                        <label for="">Telefono:</label>
+
+                        <span *ngIf="encuestaForm.get('telefono')?.errors && 
+                        (encuestaForm.get('telefono')?.dirty || encuestaForm.get('telefono')?.touched)">
+                            <small class="text-danger" *ngIf="encuestaForm.get('telefono')?.hasError('required')">
+                                Telefeno Obligatorio!
+                            </small>
+                        </span>
+                        <input type="number" class="form-control" maxlength="10" required formControlName="telefono"
+                            placeholder="Telefono">
+                    </div>
+                </div>
+                <!--Encuesta-->
+                <div>
+                    <hr style="background-color: white;">
+                </div>
+                <div class="row">
+
+                    <div class="col">
+                        <label for="">Recomendarias la pagina?</label>
+                        <br>
+                        <input type="radio" name="recomendaria" [(ngModel)]="preguntas.recomendarias"
+                            [ngModelOptions]="{standalone: true}" value="si">Si<br>
+                        <input type="radio" name="recomendaria" [(ngModel)]="preguntas.recomendarias"
+                            [ngModelOptions]="{standalone: true}" value="no">No
+                    </div>
+
+                </div>
+                <div>
+                    <hr style="background-color: white;">
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <label>Que juegos se deberian mejorar?</label>
+                        <br>
+
+                        <div>
+                            <div class="form-check">
+                                <input type="checkbox" id="checkTaTeTi" class="form-check-input" value="true"
+                                    [(ngModel)]="preguntas.mejorarTaTeTi" [ngModelOptions]="{standalone: true}">
+                                <label class="form-check-label" for="checkTaTeTi">Ta-te-ti</label>
+                            </div>
+                            <div class="form-check">
+                                <input type="checkbox" id="checkPiedraPapelTijera" class="form-check-input" value="true"
+                                    [(ngModel)]="preguntas.mejorarPiedraPapelTijera"
+                                    [ngModelOptions]="{standalone: true}">
+                                <label class="form-check-label" for="checkPiedraPapelTijera"> Piedra papel o
+                                    tijera</label>
+                            </div>
+                            <div class="form-check">
+                                <input type="checkbox" id="checkMemotest" class="form-check-input" value="true"
+                                    [(ngModel)]="preguntas.mejorarMemoTest" [ngModelOptions]="{standalone: true}">
+                                <label class="form-check-label" for="checkMemotest"> Memotest</label>
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+
+                    <div *ngIf="encuestaForm.get('cualesJugaste')?.errors && 
+                    (encuestaForm.get('cualesJugaste')?.dirty || encuestaForm.get('cualesJugaste')?.touched)">
+                        <small class="text-danger" *ngIf="encuestaForm.get('cualesJugaste')?.hasError('required')">
+                            *Debe seleccionar una opcion.
+                        </small>
+                    </div>
+
+                </div>
+
+                <div>
+                    <hr style="background-color: white;">
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <label for="">Observaciones?</label>
+                        <span *ngIf="encuestaForm.get('observacion')?.errors && 
+                        (encuestaForm.get('observacion')?.dirty || encuestaForm.get('observacion')?.touched)">
+                            <small class="text-danger" *ngIf="encuestaForm.get('observacion')?.hasError('required')">
+                                Observacion Necesaria!
+                            </small>
+                        </span>
+                        <input type="text" class="form-control" placeholder="*" formControlName="observacion">
+                    </div>
+                </div>
+
+                <section class="modal-footer">
+                    <button class="btn btn-outline-success btn-block" type="button" [disabled]="!encuestaForm.valid"
+                        (click)="this.AgregarRespuesta()">Enviar</button>
+                </section>
+            </form>
+        </div>
+    </div>
+</div>

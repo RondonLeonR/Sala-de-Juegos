@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { SLoginService } from './slogin.service';
+import { InfoGitService } from './info-git.service';
 
-describe('SLoginService', () => {
-  let service: SLoginService;
+describe('InfoGitService', () => {
+  let service: InfoGitService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(SLoginService);
+    service = TestBed.inject(InfoGitService);
   });
 
   it('should be created', () => {

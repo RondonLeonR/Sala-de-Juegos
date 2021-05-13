@@ -1,4 +1,16 @@
 <div id="container">
-    <h1>Logeado con: {{token}}</h1>
-    <h1>Falta terminar</h1>
+    <div class="mt-3">
+        <div style="margin-left: 20px;" class="col-md-20 align-self-center">
+            <img style="margin-left: 160px;" [src]="gitPerfil.avatar_url" class="rounded-circle img-fluid">
+            <div class="card-body">
+                <h4 style="color: white;">{{ gitPerfil.name }}</h4>
+                
+                <h6 style="color: white;">Pais: {{ gitPerfil.location }}</h6>
+                <h6 style="color: white;">Correo: rodorondon98@gmail.com</h6>
+                <h6 style="color: white;">Bio: {{ gitPerfil.bio }}</h6>
+
+                <a [href]="gitPerfil.html_url" target="_blank" class="btn btn-outline-success btn-sm">Perfil</a>
+            </div>
+        </div>
+    </div>
 </div>

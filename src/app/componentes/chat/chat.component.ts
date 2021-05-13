@@ -48,7 +48,6 @@ export class ChatComponent implements OnInit {
     //this.ngAfterViewInit();
     if (this.token == null) {
       //this.router.navigateByUrl("/home");
-
     } 
   }
 

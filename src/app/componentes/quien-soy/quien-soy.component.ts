@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { InfoGitService } from '../../services/info-git.service';
 
 @Component({
   selector: 'app-quien-soy',
@@ -6,12 +7,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./quien-soy.component.css']
 })
 export class QuienSoyComponent implements OnInit {
-  token = "Nadie aun";
+  public gitPerfil : any;
 
-  constructor() { }
+  constructor(private perfil: InfoGitService) { }
 
   ngOnInit(): void {
-    this.token = localStorage.getItem('token');
+    this.myProfileGit();
+  }
+
+  public myProfileGit(){
+    this.perfil.getProfileGitHub().subscribe((data)=>{
+      this.gitPerfil = data;
+    });
   }
 
 }
